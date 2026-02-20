@@ -153,3 +153,27 @@ html {
 .telegram:hover {
   box-shadow: 0 0 15px #00c6ff, 0 0 25px #0088cc;
 }
+/* Header Navigation */
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+/* Mobile Fix */
+@media(max-width:768px) {
+
+  nav {
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  nav::-webkit-scrollbar {
+    display: none; /* Chrome */
+  }
+
+  nav a {
+    flex: 0 0 auto;
+  }
+
+}
