@@ -1,0 +1,155 @@
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
+body { overflow-x:hidden; color:white; }
+
+/* Background */
+.background img { width:100%; height:100vh; object-fit:cover; position:fixed; top:0; left:0; z-index:-2; }
+.background .overlay { position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(10,10,18,0.65); z-index:-1; }
+
+/* Container */
+.container { width:90%; max-width:1200px; margin:auto; }
+
+/* Header */
+header { display:flex; justify-content:space-between; align-items:center; padding:20px 0; position:sticky; top:0; background:rgba(10,10,18,0.85); z-index:10; backdrop-filter:blur(10px); }
+nav a { margin-left:25px; text-decoration:none; color:white; opacity:0.8; transition:0.3s; }
+nav a:hover { opacity:1; color:#00f0ff; }
+.logo img { width:50px; }
+.logo h2 { font-weight:800; font-size:1.5rem; }
+
+/* Hero */
+.hero { text-align:center; padding:150px 20px; }
+.hero h1 { font-size:3rem; font-weight:800; background:linear-gradient(90deg,#00f0ff,#7b61ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.hero p { margin-top:20px; opacity:0.8; font-size:1.2rem; }
+button, .btn { margin-top:30px; padding:15px 40px; border-radius:40px; border:none; background:linear-gradient(90deg,#00f0ff,#7b61ff); color:white; font-weight:600; cursor:pointer; transition:0.3s; text-decoration:none; }
+button:hover, .btn:hover { transform:scale(1.05); }
+
+/* Sections */
+.section { padding:90px 0; }
+.section h2 { text-align:center; margin-bottom:50px; font-size:2rem; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
+.card, .stat-card, .text-block { background:rgba(255,255,255,0.05); padding:30px; border-radius:20px; backdrop-filter:blur(12px); text-align:center; transition:0.3s; }
+.card:hover, .stat-card:hover, .text-block:hover { transform:translateY(-6px); background:rgba(255,255,255,0.08); }
+
+.stat-card h3 { font-size:2rem; color:#00f0ff; }
+.dark { background:rgba(15,15,24,0.9); }
+
+.center { text-align:center; }
+.timeline { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+.timeline-step { flex:1 1 200px; background:rgba(255,255,255,0.05); padding:20px; border-radius:20px; text-align:center; transition:0.3s; }
+.timeline-step:hover { transform:translateY(-6px); background:rgba(255,255,255,0.08); }
+
+/* Footer */
+footer { text-align:center; padding:40px 0; background:rgba(8,8,12,0.85); opacity:0.9; }
+
+/* Responsive */
+@media(max-width:768px) { .hero h1 { font-size:2rem; } .grid { grid-template-columns:1fr; } .timeline { flex-direction:column; } }
+/* Floating Token */
+.floating-token {
+  position:absolute;
+  top:50px;
+  right:50px;
+  width:100px;
+  animation: float 6s ease-in-out infinite;
+  z-index:1;
+}
+.floating-token img { width:100%; filter:drop-shadow(0 0 20px #00f0ff); }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Neon Gradient for Titles */
+h2, h3 {
+  background: linear-gradient(90deg, #00f0ff, #7b61ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position:0% 50%; }
+  50% { background-position:100% 50%; }
+  100% { background-position:0% 50%; }
+}
+
+/* Roadmap Step Glow on Hover */
+.timeline-step:hover {
+  box-shadow: 0 0 20px #00f0ff, 0 0 40px #7b61ff;
+  transform:translateY(-8px);
+}
+/* --- Logo Upgrade --- */
+.logo img {
+  width: 50px;
+  height: 50px;             /* make it a perfect square for circular shape */
+  border-radius: 50%;       /* circular */
+  border: 2px solid #00f0ff; /* subtle neon border */
+  box-shadow: 0 0 15px #00f0ff, 0 0 25px #7b61ff; /* soft glow */
+  transition: 0.3s;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #00f0ff, 0 0 45px #7b61ff;
+}
+
+/* --- Tiny Upgrades --- */
+
+/* Card & Text Block Hover Glow */
+.card:hover, .stat-card:hover, .text-block:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 15px #00f0ff, 0 0 25px #7b61ff;
+}
+
+/* Button Glow on Hover */
+button:hover, .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00f0ff, 0 0 25px #7b61ff;
+}
+
+/* Floating Token Shadow Enhancement */
+.floating-token img {
+  width: 100%;
+  filter: drop-shadow(0 0 25px #00f0ff) drop-shadow(0 0 15px #7b61ff);
+}
+
+/* Footer Glow */
+footer {
+  text-align: center;
+  padding: 40px 0;
+  background: rgba(8, 8, 12, 0.85);
+  opacity: 0.95;
+  box-shadow: 0 -2px 15px #00f0ff inset;
+}
+
+/* Timeline Step Gradient Glow Enhancement */
+.timeline-step:hover {
+  box-shadow: 0 0 25px #00f0ff, 0 0 50px #7b61ff;
+  transform: translateY(-8px);
+}
+
+/* Slight Animation Speed Up for Gradient Titles */
+h2, h3 {
+  animation: gradientShift 4s ease infinite;
+}
+
+/* Smooth Scroll Behavior for buttons/anchors */
+html {
+  scroll-behavior: smooth;
+}
+/* CTA Buttons Alignment */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Telegram Button Variant */
+.telegram {
+  background: linear-gradient(90deg, #0088cc, #00c6ff);
+}
+
+.telegram:hover {
+  box-shadow: 0 0 15px #00c6ff, 0 0 25px #0088cc;
+}
