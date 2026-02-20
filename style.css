@@ -177,3 +177,9 @@ nav {
   }
 
 }
+@media(max-width:768px) {
+  nav {
+    gap: 15px;
+    font-size: 14px;
+  }
+}
